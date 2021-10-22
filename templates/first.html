@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hi!</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="content">
+				<form action="" method="get" class="form-example">
+				  <div class="Entry">
+					<label class="Title" for="name">Nom du contact</label>
+					<input type="text" name="name" id="name" placeholder="Asap Arnash" required>
+				  </div>
+				  <div class="Entry">
+					<label for="email">Mail</label>
+					<input type="email" name="email" id="email" placeholder="abc@def.ghi" required>
+				  </div>
+				  <div class="Entry">
+					<label class="Title" for="phone">Téléphone</label>
+					<input type="tel" name="phone" id="phone" placeholder="xx-xx-xx-xx" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{2}[\-]\d{2}" required required>
+				  </div>
+				  <div class="Entry">
+					<input type="radio" name="type" id="mobile" value="mobile" checked>
+					<label for="mobile">Mobile</label>
+					<input type="radio" name="type" id="maison" value="maison">
+					<label for="maison">Maison</label>
+					<input type="radio" name="type" id="travail" value="travail">
+					<label for="travail">Travail</label>
+				  </div>
+				  <div class="">
+					<input type="submit" value="Ajouter">
+				  </div>
+				</form>
+			</div>
+			<div class="controls">
+			</div>
+		</div>
+	</html>
+</body>
