@@ -1,43 +1,72 @@
-<html>
+</!DOCTYPE html>
+<html lang="fr-FR">
 	<head>
 		<meta charset="utf-8">
-		<title>Hi!</title>
+		<title>Contacts</title>
+		<link rel="icon" href="https://th.bing.com/th/id/R.087584d26e16365c5a3686bfdd6b9c42?rik=PCuLx1mFpdPCiQ&riu=http%3a%2f%2fwww.newdesignfile.com%2fpostpic%2f2009%2f08%2fcontact-icon_179510.png&ehk=vSIGfep7%2bkYO0S4w9DnT4Bb9QFlN1xxrH6Xg3oK3o18%3d&risl=&pid=ImgRaw&r=0">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<div class="container">
-			<div class="content">
-				<form action="" method="get" class="form-example">
-				  <div class="Entry">
-					<label class="Title" for="name">Nom du contact</label>
-					<input type="text" name="name" id="name" placeholder="Asap Arnash" required>
-				  </div>
-				  <div class="Entry">
-					<label for="email">Mail</label>
-					<input type="email" name="email" id="email" placeholder="abc@def.ghi" required>
-				  </div>
-				  <div class="Entry">
-					<label class="Title" for="phone">Téléphone</label>
-					<input type="tel" name="phone" id="phone" placeholder="xx-xx-xx-xx" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{2}[\-]\d{2}" required required>
-				  </div>
-				  <div class="Entry">
-					<input type="radio" name="type" id="mobile" value="mobile" checked>
-					<label for="mobile">Mobile</label>
-					<input type="radio" name="type" id="maison" value="maison">
-					<label for="maison">Maison</label>
-					<input type="radio" name="type" id="travail" value="travail">
-					<label for="travail">Travail</label>
-				  </div>
-				  <div class="">
-					<input type="submit" value="Ajouter">
-				  </div>
-				</form>
+		<form action="" method="get" class="form-example">
+			<div class="container">
+				<div class="title">Créer un nouveau contact</div>
+				<div class="content">
+					<div class="Entry">
+						<label class="Entry-Title" for="name">Nom du contact</label>
+						</br>
+						<input type="text" name="name" id="name" placeholder="Asap Arnash" required>
+					</div>
+					<div class="Entry">
+						<label class="Entry-Title" for="email">Mail</label>
+						</br>
+						<input type="email" name="email" id="email" placeholder="abc@def.ghi" required>
+					</div>
+					<div class="Entry">
+						<label class="Entry-Title" for="phone">Téléphone</label>
+						</br>
+						<input type="tel" name="phone" id="phone" placeholder="xx-xx-xx-xx" pattern="\d{8}" required required>
+					</div>
+					<div class="Entry">
+					<label class="Etny-Title" for="type">Type</label>
+					</br>
+						<label class="radio radio-before" for="mobile">
+							<span class="radio__input">
+								<input type="radio" name="type" id="mobile" value="mobile" checked>
+								<span class="radio__control"></span>
+							</span>
+							<span class="radio__label">Mobile</span>
+						</label>
+						<label class="radio radio-before" for="maison">
+							<span class="radio__input">
+								<input type="radio" name="type" id="maison" value="maison">
+								<span class="radio__control"></span>
+							</span>
+							<span class="radio__label">Maison</span>
+						</label>
+						<label class="radio radio-before" for="travail">
+							<span class="radio__input">
+								<input type="radio" name="type" id="travail" value="travail">
+								<span class="radio__control"></span>
+							</span>
+							<span class="radio__label">Travail</span>
+						</label>
+					</div>
+				</div>
+				<div class="controls">
+					<div class="left-controls">
+						<a href="javascript:history.back()" class="button-back">Annuler</a>
+					</div>
+					<div class="center-layout">
+					</div>
+					<div class="right-controls">
+						<input class="button-next" type="submit" value="Ajouter">
+					</div>
+				</div>
 			</div>
-			<div class="controls">
-			</div>
-		</div>
-	</html>
-</body>
+		</form>
+	</body>
+</html>
