@@ -45,18 +45,18 @@ Aucune  -> container            -> [title, content, controls]
 
 ## Classes implémentées
 ### Titre de fenêtre
-La classe est ==title== et s'intègre dans la balise ayant comme classe ==container==
+La classe est **title** et s'intègre dans la balise ayant comme classe **container**
 
 ### Le contenu
-La classe est ==content== et s'intègre dans la balise ayant comme classe ==container==
+La classe est **content** et s'intègre dans la balise ayant comme classe **container**
 
 ### Entrée
-C'est une ==div== qui contient, par exemple, dans un formulaire "Mot de passe:" suivi d'une entrée (input) pour entrer ce même mot de passe.
-La classe à utiliser est ==Entry==.
+C'est une **div** qui contient, par exemple, dans un formulaire "Mot de passe:" suivi d'une entrée (input) pour entrer ce même mot de passe.
+La classe à utiliser est **Entry**.
 
 ### Titre d'entrée
-Est destiné à la balise ==label== de formulaires.
-Dans une ==div== ayant comme classe ==Entry== où l'on doit entrer un mot de passe, on peut mettre un ==label== ayant comme classe ==Entry-Title== et texte "Mot de passe:".
+Est destiné à la balise **label** de formulaires.
+Dans une **div** ayant comme classe **Entry** où l'on doit entrer un mot de passe, on peut mettre un **label** ayant comme classe **Entry-Title** et texte "Mot de passe:".
 
 ### Boutons radio
 Les boutons radio des formulaires ne s'intègrent pas toujours bien. Pour cela, au lieu de simplement mettre un input de type "radio", on met le code HTML ci-dessous (qui marche tout aussi bien):
@@ -73,30 +73,30 @@ Les boutons radio des formulaires ne s'intègrent pas toujours bien. Pour cela, 
 Les valeurs des attributs for, name, id, value 
 
 ### Contrôles
-Pour mettre des contrôles en bas de la mise en page pour le dialogue, on et une div de classe ==controls==
+Pour mettre des contrôles en bas de la mise en page pour le dialogue, on et une div de classe **controls**
 #### Contrôles droits
 Cette zone doit servir uniquement au bouton "Annuler", "Retour", ou tout autre action soit négative, dangereuse ou pouvant entraîner une perte de données.
-C'est une ==div== de class ==right-controls==, à mettre dans la div de classe ==controls==.
+C'est une **div** de class **right-controls**, à mettre dans la div de classe **controls**.
 
 #### Contrôles gauches
-Dédié aux boutons aux effets ==positifs== comme ajouter une donnée. Ou "Annuler" dans le cas où l'on veut suprimmer une donnée.
-C'est une ==div== de classe ==left-controls==.
+Dédié aux boutons aux effets **positifs** comme ajouter une donnée. Ou "Annuler" dans le cas où l'on veut suprimmer une donnée.
+C'est une **div** de classe **left-controls**.
 
 #### Contrôles du centre
-Zone servant aux autres boutons, par exemple pour un bouton "Aide", ou "Renvoyer". La classe de la div doit être ==center-controls==.
+Zone servant aux autres boutons, par exemple pour un bouton "Aide", ou "Renvoyer". La classe de la div doit être **center-controls**.
 
 ### Boutons de contrôle
 Il y a 3 types de boutons de contrôle. Le basique, le positif et négatif.
-Ils sont souvent des éléments de type ==a==, ==button== ou ==input==.
+Ils sont souvent des éléments de type **a**, **button** ou **input**.
 
 #### Bouton
-Elément de classe ==button==. Sers pour n'importe quel bouton, par exemple un bouton "Aide".
+Elément de classe **button**. Sers pour n'importe quel bouton, par exemple un bouton "Aide".
 
 #### Bouton Retour, ou Annuler (négatif)
-Elément de classe ==button-back==.
+Elément de classe **button-back**.
 
 #### Bouton Suivant, ou Appliquer (positif)
-Elément de classe ==button-next==
+Elément de classe **button-next**
 
 ## Et en HTML?
 En HTML, tout cela donne la forme suivante:
@@ -139,4 +139,4 @@ En HTML, tout cela donne la forme suivante:
 	</body>
 </html>
 ```
-Il faut noter, pour le bouton "Annuler", ==l'utilisation du javascript==. La commande permet de faire un ==retour à la page précédente== de l'historique de navigation.
+Il faut noter, pour le bouton "Annuler", **l'utilisation du javascript**. La commande permet de faire un **retour à la page précédente** de l'historique de navigation.
