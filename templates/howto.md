@@ -1,5 +1,5 @@
-#Pour bien commencer
-##La balise HTML
+# Pour bien commencer
+## La balise HTML
 Elle déclare le type de document. Dans la balise ouvrante, on peut ajouter la langue utilisée pour le texte. Cela aide, par exemple pour que le navigateur traduise la page en une autre langue de façon automatique:
 ```HTML
 </!DOCTYPE html>
@@ -14,7 +14,7 @@ Pour le français, en France, on a:
 ```
 Si on est en Belgique, on peut alors mettre "fr-BE", ou en chine: "zh-CN".
 
-##Le header
+## Le header
 Pour bien commencer, il faut inclure les ressources "générales". CAD les polices d'écriture (de Google) et le fichier CSS commun
 ```HTML
 	<head>
@@ -34,8 +34,8 @@ On peut y ajouter les balises suivantes pour la favicon ainsi que le titre de la
 
 ```
 
-#Composants
-##Structure visuelle
+# Composants
+## Structure visuelle
 Visuellement, on a:
 Le fond -> La boîte de dialogue -> le contenu: [titre, contenu, contrôles]
 Les balises correspondantes sont:
@@ -43,22 +43,22 @@ body    -> div                  -> [div, div, div]
 Les classes correspondantes sont:
 Aucune  -> container            -> [title, content, controls]
 
-##Classes implémentées
-###Titre de fenêtre
+## Classes implémentées
+### Titre de fenêtre
 La classe est "title" et s'intègre dans la balise ayant comme classe "container"
 
-###Le contenu
+### Le contenu
 La classe est "content" et s'intègre dans la balise ayant comme classe "container"
 
-###Entrée
+### Entrée
 C'est une div qui contient, par exemple, dans un formulaire "Mot de passe:" suivi d'une entrée (input) pour entrer ce même mot de passe.
 La classe à utiliser est "Entry".
 
-###Titre d'entrée
+### Titre d'entrée
 Est destiné à la balise label de formulaires.
 Dans une div ayant comme classe "Entry" où l'on doit entrer un mot de passe, on peut mettre un label ayant comme classe "Entry-Title" et texte "Mot de passe:".
 
-###Boutons radio
+### Boutons radio
 Les boutons radio des formulaires ne s'intègrent pas toujours bien. Pour cela, au lieu de simplement mettre un input de type "radio", on met le code HTML ci-dessous (qui marche tout aussi bien):
 ```HTML
 	<label class="radio radio-before" for="mobile">
@@ -72,33 +72,33 @@ Les boutons radio des formulaires ne s'intègrent pas toujours bien. Pour cela, 
 ```
 Les valeurs des attributs for, name, id, value 
 
-###Contrôles
+### Contrôles
 Pour mettre des contrôles en bas de la mise en page pour le dialogue, on et une div de classe "controls"
-####Contrôles droits
+#### Contrôles droits
 Cette zone doit servir uniquement au bouton "Annuler", "Retour", ou tout autre action soit négative, dangereuse ou pouvant entraîner une perte de données.
 C'est une div de class "right-controls", à mettre dans la div de classe "controls".
 
-####Contrôles gauches
+#### Contrôles gauches
 Dédié aux boutons aux effets "positifs" comme ajouter une donnée. Ou "Annuler" dans le cas où l'on veut suprimmer une donnée.
 C'est une div de classe "left-controls".
 
-####Contrôles du centre
+#### Contrôles du centre
 Zone servant aux autres boutons, par exemple pour un bouton "Aide", ou "Renvoyer". La classe de la div doit être "center-controls".
 
-###Boutons de contrôle
+### Boutons de contrôle
 Il y a 3 types de boutons de contrôle. Le basique, le positif et négatif.
 Ils sont souvent des éléments de type "a", "button" ou "input".
 
-####Bouton
+#### Bouton
 Elément de classe "button". Sers pour n'importe quel bouton, par exemple un bouton "Aide".
 
-####Bouton Retour, ou Annuler (négatif)
+#### Bouton Retour, ou Annuler (négatif)
 Elément de classe "button-back".
 
-####Bouton Suivant, ou Appliquer (positif)
+#### Bouton Suivant, ou Appliquer (positif)
 Elément de classe "button-next"
 
-##Et en HTML?
+## Et en HTML?
 En HTML, tout cela donne la forme suivante:
 ```HTML
 </!DOCTYPE html>
