@@ -16,6 +16,7 @@ body {
 	width: 100%;
 	overflow: hidden;
 }
+
 body:before {
 	content: "";
 	background: url("https://linuxmint.com/web/wizixo/template/assets/images/bg/pattern/02.png");
@@ -31,6 +32,7 @@ body:before {
     z-index: 0;
 }
 
+/* Inputs styling */
 input {
 	width: 80%;
 	padding: 5px;
@@ -50,6 +52,7 @@ input:focus {
 	background-color: #e5f3ff;
 }
 
+/* Special styling cause these are special */
 input[type=submit] {
 	width: 100%;
 	margin: 0px;
@@ -88,42 +91,9 @@ input[type=radio] {
   margin-top: -10px;
 }
 
-.fix-top {
-	margin-top: 0px;
-}
-
-.controls {
-	height: 30px;
-	padding: 5px;
-	background-color: #efefef;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-
-.right-controls {
-	float: right;
-	margin-top: 2px;
-}
-
-.right-controls > *:nth-child {
-	margin-right: 4px;
-}
-
-.center-controls {
-	margin-top: 2px;
-}
-
-.center-controls > *:nth-child {
-	margin: 2px 0px;
-}
-
-.left-controls {
-	float: left;
-	margin-top: 2px;
-}
-
-.left-controls > *:nth-child {
-	margin-left: 4px;
+/* To hide the bottom line of the last entry*/
+.content > *:last-child {
+	border-bottom: 0px;
 }
 
 .Entry {
@@ -138,11 +108,44 @@ input[type=radio] {
 	padding: 10px;
 }
 
-.content > *:last-child {
-	border-bottom: 0px;
+/* Controls area */
+.controls {
+	height: 30px;
+	padding: 5px;
+	background-color: #efefef;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
-.button, .button-back, .button-back:visited, .button-back:link, .button-next {
+.right-controls {
+	float: right;
+	margin-top: 2px;
+}
+
+.center-controls {
+	margin-top: 2px;
+}
+
+.left-controls {
+	float: left;
+	margin-top: 2px;
+}
+
+/* Used for the spacing of the buttons in the boxes */
+.left-controls > *:nth-child {
+	margin-left: 4px;
+}
+
+.center-controls > *:nth-child {
+	margin: 2px 0px;
+}
+
+.right-controls > *:nth-child {
+	margin-right: 4px;
+}
+
+/*Buttons area */
+.button, .button:visited, .button:link, .button-back, .button-back:visited, .button-back:link, .button-next, .button-next:visited, .button-next:link {
     -webkit-writing-mode: horizontal-tb !important;
     font-style: none;
     font-variant-ligatures: none;
@@ -181,14 +184,15 @@ input[type=radio] {
 	border: 1px solid;
 }
 
-.button {
+/* Classical button */
+.button, .button:visited, .button:link {
 	background-color: #a6d0ff;
 	border-color: #3986de;
 	color: #0acc00;
 }
 
 .button:hover {
-	background-color: #3986de;
+	background-color: #3986de !important;
 }
 
 .button:focus {
@@ -196,14 +200,15 @@ input[type=radio] {
 	border-color: #1565C0;
 }
 
-.button-back, .button-back:visited, .button-back:link {
+/* Red button, like a discard changes */
+.button-back {
 	background-color: #ffb7b7;
 	border-color: #ff0000;
 	color: #ff0000;
 }
 
 .button-back:hover {
-	background-color: #ff0000;
+	background-color: #ff0000 !important;
 }
 
 .button-back:focus {
@@ -211,14 +216,15 @@ input[type=radio] {
 	border-color: #ee0000;
 }
 
-.button-next {
+/* Green button like apply changes */
+.button-next, .button-next:visited, .button-next:link {
 	background-color: #9fff9a;
 	border-color: #0acc00;
 	color: #0acc00;
 }
 
 .button-next:hover {
-	background-color: #089f00;
+	background-color: #089f00 !important;
 }
 
 .button-next:focus {
@@ -226,6 +232,7 @@ input[type=radio] {
 	border-color: #089f00;
 }
 
+/* Common button styling */
 .button:hover, .button-back:hover, .button-next:hover {
 	color: white;
 }
@@ -235,6 +242,7 @@ input[type=radio] {
 	color: white;
 }
 
+/* Radio area */
 .radio {
   display: grid;
   grid-template-columns: -webkit-min-content auto;
@@ -284,6 +292,8 @@ input[type=radio] {
   color: #1565C0;
 }
 
+/* Table area */
+/* Empty area for e.g. a checkbox */
 .void-spacer {
 	background-color: transparent;
 	width: 15px;
@@ -291,6 +301,7 @@ input[type=radio] {
   margin: 0px 10px;
 }
 
+/* Vertical line separator */
 .spacer {
 	width: 1px;
 	border-left: 1px solid #d2d2d2;
@@ -303,6 +314,7 @@ input[type=radio] {
   height: 100%;
 }
 
+/* Keep what each section corresponds to visible */
 #contactsListContainer thead th {
   position: sticky;
   top: 0;
@@ -330,9 +342,11 @@ td:not(:first-child) td:not(:first-child) {
   border-left: 1px solid black;
 }
 
-tr:first-child {
-	background-color: gray;
-	border-radius: 3px;
+thead > tr:first-child {
+  background-color: #b5b9ba;
+  border-radius: 3px;
+  position: sticky;
+  top: 0;
 }
 
 tr:hover {
@@ -344,15 +358,101 @@ tr:hover {
 	color: #004eff;
 }
 
-tr:first-child:hover {
-	background-color: gray;
+thead > tr:first-child:hover {
+	background-color: #b5b9ba;
 	color: inherit;
+}
+
+/* The clickable have to fit the style too */
+tr > td > a {
+  text-decoration: none;
+  color: inherit;
+  background: inherit;
+  border-color: inherit;
+  font-size: inherit;
+  display: block;
 }
 
 .list-checkbox-header {
 	width:  15px;
 }
 
+/* Needs to be here, else it will conflict with previous styles and broke */
 input[type="checkbox"] {
     width: 15px;
+}
+
+#contactsListContainer {
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+#contactsListContainer:hover {
+	overflow-y: auto;
+}
+
+/* Beautifully show the scrollbar by a with-love-hand-crafted animation :) 
+	 Has to be separated so we can enable it or don't if the content is scrollable or not.
+	 Do not care about the scrollbar, it will just keep hidden if needed as it is auto.    */
+.cLCEnableAnim:hover {
+	animation-name: clc_anim;
+	animation-duration: 0.25s;
+	animation-timing-function: ease-in;
+}
+
+#contactsListContainer:hover > ::-webkit-scrollbar {
+	animation-name: clc_sb_anim;
+	animation-duration: 0.25s;
+}
+
+/* Scrollbar popuping animations */
+@keyframes clc_sb_anim {
+	0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes clc_anim {
+  0% {padding-right: 0px; overflow-y: hidden;}
+  49% {padding-right:  14px;}
+  50% {padding-right: 0px;}
+  75% {overflow-y: auto;}
+  100% {padding-right: 0px;}
+}
+
+/* Scrollbar UI */
+/*Do we really need compatibility for other rendering engines? At all WebKit is (seems?) the best */
+#contactsListContainer::-webkit-scrollbar {
+	width: 14px;
+}
+
+#contactsListContainer::-webkit-scrollbar-thumb {
+	background-clip: content-box;
+	border: 4px solid transparent;
+	border-radius: 7px;
+	box-shadow: inset 0 0 0 10px;
+	color: #c0c6c8;
+}
+
+#contactsListContainer::-webkit-scrollbar-thumb:hover {
+	color: gray;
+}
+
+#contactsListContainer::-webkit-scrollbar-thumb:active {
+	color: #6a6c72;
+}
+
+#contactsListContainer::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+	display: none;
+}
+
+#contactsListContainer::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
+
+/* Fixes of behaviours */
+/* Used when there is a top margin that usually doesn't show up in the first Entry */
+.fix-top {
+	margin-top: 0px;
 }
