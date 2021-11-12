@@ -108,6 +108,34 @@ input[type=radio] {
 	padding: 10px;
 }
 
+/* Showcase components */
+#Contact-Name {
+    font-weight: 900;
+    font-size: 75px;
+}
+
+#Profile-Picture {
+    width: 100px;
+    height: 100px;
+    background: #d1d1d1;
+    border-radius: 50%;
+    color: white;
+    margin: auto;
+    text-align: center;
+    padding: 23px;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.information {
+	font-size: 16px;
+}
+
+.information a:link, .information a:visited, .information a {
+	color: #1565c0;
+	text-decoration: underline;
+}
+
 /* Controls area */
 .controls {
 	height: 30px;
@@ -188,7 +216,7 @@ input[type=radio] {
 .button, .button:visited, .button:link {
 	background-color: #a6d0ff;
 	border-color: #3986de;
-	color: #0acc00;
+	color: #32419d;
 }
 
 .button:hover {

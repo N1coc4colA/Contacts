@@ -1,21 +1,19 @@
-var clc = document.getElementById("contactsListContainer")
+/*https://codepen.io/sergiopedercini/pen/RLJYLj/*/
+function stringToHslColor(str,s,l) {var h=0; for (var i=0; i<str.length; i++) {h=str.charCodeAt(i)+((h<<5)-h);} var e = h % 360; return 'hsl('+e+','+s+'%,'+l+'%)';}
 
-if (clc != null) {
-	console.log("Baby is OK");
-	//We can set up the styling
-	var s_height = clc.offsetHeight;
-	var dad = clc.parentElement;
-	if (dad != null) {
-		console.log("Dad is OK");
-		var mom = dad.parentElement;
-		if (mom != null)  {
-			console.log("Mom is OK");
-			var m_height = mom.offsetHeight;
-			if (m_height <= s_height) {
-				console.log("Mom equals to ", m_height);
-				console.log("Baby equals to ", s_height);
-				clc.classList.remove("cLCEnableAnim");
-			}
-		}
-	}
+function loadStyles() {
+//Loaded elements dependent
+var clc=document.getElementById("contactsListContainer")
+if (clc!=null) {/*We can set up the styling*/ var sh=clc.offsetHeight; var d=clc.parentElement; if (d!=null) {var m = d.parentElement; if (m!=null)  {
+var mh=m.offsetHeight; if (mh<=sh) {clc.classList.remove("cLCEnableAnim");}}}}
+
+//Value dependent
+var p=document.getElementById("Profile-Picture");
+if (p!=null) {console.log("Found a picture");var cn=document.getElementById("Contact-Name"); if (cn!=null) {console.log("Found the name"); Object.assign(p.style, {"background-color": stringToHslColor(cn.innerHTML, "68", "70")});}}
+}
+window.addEventListener("load", loadStyles);
+
+var btns=document.getElementsByClassName("back-home");
+for (var i = 0; i < btns.length; i++) {
+   btns.item(i).href = "index.html"; 
 }

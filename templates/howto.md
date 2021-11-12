@@ -115,6 +115,31 @@ Elément de classe **button-back**.
 #### Bouton Suivant, ou Appliquer (positif)
 Elément de classe **button-next**
 
+#### Retour à l'acceuil
+Elément de n'importe quel type qui, quand il est cliqué va renvoyer vers **index.html**. Il est utile pour les boutons **submit** et éviter du code parfois peu clair côté serveur. La classe à utiliser est **back-home**.
+
+## Composants 'Showcase'
+Ces classes sont dédiées, uniquement, à afficher des information sur une page informative. Par exemple, afficher les données d'un contact.
+
+### Contact-Name
+**Identifiant** pour balise de paragraphe, souvent conbinée avec la classe **Entry-Title**. C'est le nom d'une personne sélectionnée sur une page d'affichage.
+
+### Profile-Picture
+**Identifiant** pour **div**. C'est un cercle qui est coloré en fonction du contenu de **Contact-Name**. Si aucun élément ayant l'identifiant **Contact-Name** n'est pas trouvé, une couleur par défaut est utilisée. Le mieu est d'y mettre en contenu les initiales de la personne, par exemple pour Asap Arash, on mettra "Aa", pour Silvya Thund ce sera "St". Lors du chargement de la page, la couleur du fond est définie.
+
+### information
+Tout autres données informatives comme un mail ou bien un numéro de téléphone. La classe à utiliser est bien sûr **information**.
+
+## Intégration avec la plateforme
+Les styles sont défini pour supprimer les styles dits plateform-dependant, comme les boutons radio par exemple, qui seront alors les mêmes sur toutes les plateformes. Une autre chose importante pour les données personnelles est d'utiliser des liens qui redirigent vers les applications système. 2 bons exemples sont les mails et les numéros de téléphones:
+```HTML
+</!DOCTYPE html>
+<html><body>
+	<a href="tel:son_num">Le num de Johanna</a>
+	<a href="mail:son_mail">Le mail de Johanna</a>
+</body></html>
+```
+
 ## Et en HTML?
 En HTML, tout cela donne la forme suivante:
 ```HTML
@@ -135,6 +160,15 @@ En HTML, tout cela donne la forme suivante:
 			<div class="container">
 				<div class="title">Créer un nouveau contact</div>
 				<div class="content">
+					<div class="Entry">
+						<div id="Profile-Picture">Aa</div>
+					</div>
+					<div class="Entry">
+						<p class="Entry-Title" id="Contact-Name">Asap Arnash</p>
+						</br>
+						<p class="information">Téléphone (): <a href="tel:XXX-X-XXX">XXX-X-XXX</a></p>
+						<p class="information">Mail: <a href="mail:family@x.d">family@x.d</a></p>
+					</div>
 					<div class="Entry">
 						<label class="Entry-Title" for="name">Nom du contact</label>
 						</br>
