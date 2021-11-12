@@ -2,37 +2,43 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+def htmlify(cursor):
+	"""
+	Transform raw SQL data into a beautiful HTML text that can be inserted into a page.
+	"""
+	out = ""
+	return out
 
 @app.route('/') 
 def home():
-    '''
-    ceci est le debut de la page c'est a dire le fichier ooof.html
+	'''
+    Renders the home page
 
     '''
-    return render_template("ooof.html")
+	#Arguments: selection - ID of the data ro remove from the DB
+    return render_template("index.html")
 
 @app.route("/add")
 def add():
     '''
-    ceci est la page d'ajout c'est a dire le fichier first.html
+    Renders the page used to edit or add a contact
 
     '''
-    return render_template("first.html")
+	#Arguments: id - ID of the data to be modified in the DB (
+	#         name - New user name
+	#        email - New email address
+	#        phone - New phone number
+	#         type - New phone type number
+    return render_template("add.html")
 
-@app.route("/liste")
-def liste():
+@app.route("/view")
+def suppr():
     '''
-    ceci est la page liste c'est a dire le fichier index.html
-    '''
-    return render_template("index.html")
-
-@app.route("/supr")
-def supr():
-    '''
-    ceci est censer etre le debut de la page suprimer un contact 
+    Renders the page that shows data about a user
 
     '''
-    return ("ptdr y a rien")
+	#Arguments: id - The ID of the data to be shown from the DB
+    return ("view.html")
 
 if __name__ == "__main__":
     app.run()
