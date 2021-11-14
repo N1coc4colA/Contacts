@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 import sqlite3
-
 class DB:
 	db = None
 	_inst = None
@@ -11,8 +10,41 @@ class DB:
 		return DB._inst
 
 	def __init__(self):
-		self.db = sqlite3.connect("livres_db")
+		self.db = sqlite3.connect("contacts_db")
 		self.cursor = self.db.cursor()
+		self.cursor.execute("SELECT count(name) FROM sqlite_master WHERE type='table' AND name='contacts'")
+		if (self.cursor.fetchone()[0] != 1):
+			self.cursor.execute('''
+			CREATE TABLE contacts (
+				Id INTEGER PRIMARY KEY,
+				Nom TEXT,
+				Prenom TEXT,
+				Phone INTEGER,
+				PType INTEGER
+			)
+			''')
+		db.commit()
+
+	def htmlifiedList(self):
+		"""
+		Transform raw SQL data into a beautiful HTML text that can be inserted into a page.
+		"""
+		out = ""
+		self.cursor.execute("SELECT (*) FROM ;")
+		data = self.cursor.fetchall()
+		for e in data:
+			out += "<tr><td><input type=\"checkbox\" name=\"selection\" value=\""
+			out += str(e[0])
+			out += "></td><td><a href=\"view?id="
+			out += str(e[0])
+			out += "\">"
+			out += str(e[1])
+			out += "</a></td><td><a href=\"view?id="
+			out += str(e[0])
+			out += ">"
+			out += str(e[2])
+			out += "</a></td></tr>"
+		return out
 		
 	def remove_by_id(id):
    	 """
