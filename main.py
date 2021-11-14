@@ -52,7 +52,7 @@ class DB:
 
    	 """
 	requete = "DELETE  FROM Contact  WHERE Id = ?;"
-	cursor.execute(requete, [id])
+	self.cursor.execute(requete, [id])
 	
 
 app = Flask(__name__)
