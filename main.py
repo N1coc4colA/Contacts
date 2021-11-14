@@ -60,10 +60,8 @@ class DB:
    	 add data from the DB by using its ID
 
    	 """
-	requete = "INSERT INTO Contacts VALUES (*) WHERE Id = ?;"
-	data=request.form
-	content = get_by_id(data["id"])
-    	return render_template("view.html", name=content["name"], initials=get_initales(content"name"]), ptype=content["type"], phone=content["phone"], mail=content["mail"])
+	requete = "INSERT INTO Contacts VALUES ("name","phone","mail");"
+    	return (name=content["name"], initials=get_initales(content"name"]), ptype=content["type"], phone=content["phone"], mail=content["mail"])
 	self.cursor.execute(requete, [content])
 	self.db.commit()
 	
