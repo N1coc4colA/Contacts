@@ -53,6 +53,7 @@ class DB:
    	 """
 	requete = "DELETE  FROM Contacts  WHERE Id = ?;"
 	self.cursor.execute(requete, [id])
+	self.db.commit()
 	
 	def add_by_id(id):
 	 """
@@ -61,6 +62,7 @@ class DB:
    	 """
 	requete = "INSERT INTO Contacts VALUES (*) WHERE Id = ?;"
 	self.cursor.execute(requete, [id])
+	self.db.commit()
 	
 	def see(self):
     	'''
