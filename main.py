@@ -71,7 +71,7 @@ class DB:
 		self.cursor.execute(requete)
 		self.db.commit()
 		#On n'a rien à retourner, on réalise uniquement une opération
-		return (name=content["name"], initials=get_initales(content"name"]), ptype=content["type"], phone=content["phone"], mail=content["mail"])
+		
 
 	def update_by_id(self, content, id):
 		self.cursor.execute("UPDATE contacts SET Nom=\"" + content["nom"] + "\, Prenom=\"" + content["surname"] + "\", Phone=" + content["phone"] + ", PType=" + content["ptype"] + " WHERE Id=" + id + ");"
