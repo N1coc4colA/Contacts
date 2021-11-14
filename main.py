@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import sqlite3
+
 class DB:
 	db = None
 	_inst = None
@@ -21,7 +22,7 @@ class DB:
 				Prenom TEXT,
 				Mail TEXT,
 				Phone INTEGER,
-				PType INTEGER
+				PType TEXT
 			)
 			''')
 		db.commit()
@@ -48,40 +49,36 @@ class DB:
 		return out
 		
 	def remove_by_id(id):
-   	 """
-   	 Remove data from the DB by using its ID
+   	 	"""
+   	 	Remove data from the DB by using its ID
 
-   	 """
-	requete = "DELETE  FROM Contacts  WHERE Id = ?;"
-	self.cursor.execute(requete, [id])
-	self.db.commit()
+   		 """
+		requete = "DELETE  FROM Contacts  WHERE Id = ?;"
+		self.cursor.execute(requete, [id])
+		self.db.commit()
 	
 	def add_contact(content):
-	 """
-   	 add data from the DB by using its ID
+		 """
+   		 add data from the DB by using its ID
+	
+   		 """
+		#Attention à l'indentation, avec Python, une mauvaise indentation et c'est la cata!
+		#requete = ".................... ( le nom des valeurs qui seront ajoutées ) .... (Les, valeurs, ici, ...);
+		#Inspires toi de la fonction juste après pour la syntaxe à utiliser ici.
+		requete = "INSERT INTO contacts (Nom, Prenom ...) VALUES (\"" + content["name"] + "\",\"" + content["mail"] + "\", " + content["phone"],content["mail"]);"
+		#Pas de return ici!!!!
+		#content["name"] pour (Les, valerurs, ...)
+		self.cursor.execute(requete)
+		self.db.commit()
+		#On n'a rien à retourner, on réalise uniquement une opération
+		return (name=content["name"], initials=get_initales(content"name"]), ptype=content["type"], phone=content["phone"], mail=content["mail"])
 
-   	 """
-	#requete = ".................... ( le nom des valeurs qui seront ajoutées ) .... (Les, valeurs, ici, ...)
-	requete = "INSERT INTO Contacts VALUES ("name","phone","mail") AND ("content["name"],content["phone"],content["mail"]);"
-	#Pas de return ici!!!!
-	#content["name"] pour (Les, valerurs, ...)
-	self.cursor.execute(requete, [content])
-	self.db.commit()
-	return (name=content["name"], initials=get_initales(content"name"]), ptype=content["type"], phone=content["phone"], mail=content["mail"])
-	
-	
+	def update_by_id(self, content, id):
+		self.cursor.execute("UPDATE contacts SET Nom=\"" + content["nom"] + "\, Prenom=\"" + content["surname"] + "\", Phone=" + content["phone"] + ", PType=" + content["ptype"] + " WHERE Id=" + id + ");"
+		self.db.commit()
 	
 
 app = Flask(__name__)
-
-def htmlify(cursor):
-	"""
-	Transform raw SQL data into a beautiful HTML text that can be inserted into a page.
-
-	"""
-	out = ""
-	return out
-
 
 def get_initials(name):
 	"""
@@ -102,51 +99,46 @@ def get_initials(name):
 			out += v[0][1]
 	return out
 
-def get_by_id(ID):
-	"""
-	"""
-
 @app.route('/', methods=["POST"]) 
 def home():
 	'''
-    Renders the home page
+	Renders the home page
 
-    '''
+	'''
 	#Arguments: selection - ID of the data to remove from the DB
 	data=request.form
 	if (data["selection"]) {
-			remove_by_id(int(data["selection"]))
+			DB.instance().remove_by_id(data["selection"])
 	}
-	return render_template("index.html", data=get_list())
+	return render_template("index.html", data=DB.instance()htmlifiedList())
 
-@app.route("/add")
+@app.route("/add", methods=["POST"])
 def add():
-    '''
-    Renders the page used to edit or add a contact
-
-    '''
+	'''
+	Renders the page used to edit or add a contact
+	'''
 	#Arguments: id - ID of the data to be modified in the DB (
 	#         name - New user name
 	#        email - New email address
 	#        phone - New phone number
 	#         type - New phone type number
 	data=request.form
-    if (request["id"]) {
-		infos=get_by_id(int(request["id"]))
-		return render_template("add.html", nom=infos["name"], phone=infos["phone"], mail=infos["mail"])
-    }
-    return render_template("add.html", nom="", phone="", mail="")
+	if (request["id"]) {
+		infos=DB.instance().get_by_id(int(request["id"]))
+		return render_template("add.html", nom=infos["name"], surname=infos["surname"], phone=infos["phone"], mail=infos["mail"])
+	}
+	return render_template("add.html", nom="", surname="", phone="", mail="")
 
-@app.route("/view")
+@app.route("/view", methods=["GET"])
 def see():
-    '''
-    Renders the page that shows data about a user
-
-    '''
+	'''
+	Renders the page that shows data about a user
+	'''
 	#Arguments: id - The ID of the data to be shown from the DB
 	data=request.form
 	infos = get_by_id(data["id"])
-    return render_template("view.html", name=infos["name"], initials=get_initales(infos["name"]), ptype=infos["type"], phone=infos["phone"], mail=infos["mail"])
+	cn = infos["name"] + " " + infos["surname"]
+	return render_template("view.html", name=cn, initials=get_initales(cn), ptype=infos["type"], phone=infos["phone"], mail=infos["mail"])
 
 if __name__ == "__main__":
     app.run()
