@@ -19,6 +19,9 @@ class DB:
    	 Remove data from the DB by using its ID
 
    	 """
+	requete = "DELETE  FROM Contact  WHERE Id = ?;"
+	cursor.execute(requete, [id])
+	return (requete)
 
 app = Flask(__name__)
 
