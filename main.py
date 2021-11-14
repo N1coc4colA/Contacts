@@ -55,22 +55,16 @@ class DB:
 	self.cursor.execute(requete, [id])
 	self.db.commit()
 	
-	def add_by_id(id):
+	def add_contact(content):
 	 """
    	 add data from the DB by using its ID
 
    	 """
 	requete = "INSERT INTO Contacts VALUES (*) WHERE Id = ?;"
-	self.cursor.execute(requete, [id])
+	self.cursor.execute(requete, [content])
 	self.db.commit()
 	
-	def see(self):
-    	'''
-    	Renders the page that shows data about a user
-
-    	'''
-	resultat = "SELECT (*) FROM contacts;"
-	print(resultat)
+	
 	
 
 app = Flask(__name__)
