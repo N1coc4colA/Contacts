@@ -1,5 +1,18 @@
 from flask import Flask, render_template
+import sqlite3
 
+class DB:
+	db = None
+	_inst = None
+
+	def instance():
+		if (DB._inst == None):
+			DB._inst = DB();
+		return DB._inst
+
+	def __init__(self):
+		self.db = sqlite3.connect("livres_db")
+		self.cursor = self.db.cursor()
 
 app = Flask(__name__)
 
