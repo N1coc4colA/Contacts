@@ -13,6 +13,12 @@ class DB:
 	def __init__(self):
 		self.db = sqlite3.connect("livres_db")
 		self.cursor = self.db.cursor()
+		
+	def remove_by_id(id):
+   	 """
+   	 Remove data from the DB by using its ID
+
+   	 """
 
 app = Flask(__name__)
 
@@ -24,11 +30,6 @@ def htmlify(cursor):
 	out = ""
 	return out
 
-def remove_by_id(id):
-    """
-    Remove data from the DB by using its ID
-
-    """
 
 def get_initials(name):
 	"""
