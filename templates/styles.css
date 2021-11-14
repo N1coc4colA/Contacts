@@ -32,6 +32,14 @@ body:before {
     z-index: 0;
 }
 
+a, a:hover, a:active, a:visited, a:link {
+	text-decoration: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
 /* Inputs styling */
 input {
 	width: 80%;
