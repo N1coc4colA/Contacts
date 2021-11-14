@@ -62,6 +62,14 @@ class DB:
 	requete = "INSERT INTO Contacts VALUES (*) WHERE Id = ?;"
 	self.cursor.execute(requete, [id])
 	
+	def see(self):
+    	'''
+    	Renders the page that shows data about a user
+
+    	'''
+	resultat = "SELECT (*) FROM contacts;"
+	print(resultat)
+	
 
 app = Flask(__name__)
 
