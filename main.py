@@ -51,7 +51,15 @@ class DB:
    	 Remove data from the DB by using its ID
 
    	 """
-	requete = "DELETE  FROM Contact  WHERE Id = ?;"
+	requete = "DELETE  FROM Contacts  WHERE Id = ?;"
+	self.cursor.execute(requete, [id])
+	
+	def add_by_id(id):
+	 """
+   	 add data from the DB by using its ID
+
+   	 """
+	requete = "INSERT INTO Contacts VALUES (*) WHERE Id = ?;"
 	self.cursor.execute(requete, [id])
 	
 
