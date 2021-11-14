@@ -62,12 +62,12 @@ class DB:
 
    	 """
 	#requete = ".................... ( le nom des valeurs qui seront ajoutées ) .... (Les, valeurs, ici, ...)
-	requete = "INSERT INTO Contacts VALUES ("name","phone","mail");"
+	requete = "INSERT INTO Contacts VALUES ("name","phone","mail") AND ("content["name"],content["phone"],content["mail"]);"
 	#Pas de return ici!!!!
 	#content["name"] pour (Les, valerurs, ...)
-    	return (name=content["name"], initials=get_initales(content"name"]), ptype=content["type"], phone=content["phone"], mail=content["mail"])
 	self.cursor.execute(requete, [content])
 	self.db.commit()
+	return (name=content["name"], initials=get_initales(content"name"]), ptype=content["type"], phone=content["phone"], mail=content["mail"])
 	
 	
 	
