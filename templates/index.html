@@ -17,7 +17,10 @@
 	<body>
 		<form action="" method="get">
 			<div class="container">
-				<div class="title">Liste des contacts</div>
+				<div class="TitleBar">
+					<input class="SearchBar" onkeyup="updateSearch(this.value);" type="text" placeholder="Rechercher">
+					<div class="title withSearchBar">Liste des contacts</div>
+				</div>
 				<div class="content fix-top">
 					<!-- Here goes the list -->
 					<div class="cLCEnableAnim" id="contactsListContainer">
@@ -29,15 +32,7 @@
 									<th>Prénom</th>
 								</tr>
 							</thead>
-							<tbody>
-								<!-- Exemple pour le retour de formattage qui sera à utiliser en release -->
-								<tr>
-									<td><input type="checkbox" name="selection" value="IDb"></td>
-									<td><a href="view?id=1">C'est mon nom</a></td>
-									<td><a href="view?id=1">Et mon prénom</a></td>
-								</tr>
-								{{data}}
-							</tbody>
+							<tbody>{{data}}</tbody>
 						</table>
 					</div>
 				</div>
