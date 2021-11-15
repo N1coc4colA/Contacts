@@ -83,15 +83,12 @@ class DB:
 			out += "<tr><td><input type=\"checkbox\" name=\"selection\" value=\""
 			out += str(e[0])
 			out += "\"></td><td>"
-			#La balise <a>, on doit avoir:
-			#<a href="view?id=%1" data-info="%2">
 			out += "<a href=\"view?id=\""
-			out += str(e[0]) #On met le %1, l'ID
+			out += str(e[0]) 
 			out += "\" data-info=\""
-			out += str(e[5]) #On met le %2, le type
+			out += str(e[5]) 
 			out += "\">"
 			out += str(e[1])
-			#De même pour ici
 			out += "</a></td><td><a href=\"view?id=\""
 			out += str(e[0])
 			out += "\" data-info=\""
