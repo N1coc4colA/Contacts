@@ -82,7 +82,7 @@ class DB:
 		for e in data:
 			out += "<tr><td><input type=\"checkbox\" name=\"selection\" value=\""
 			out += str(e[0])
-			out += "\"></td><td><a href=\"view?id= data_info="str(e[5])"
+			out += "\"></td><td><a href=\"view?id= data_info="str(e[5]) "</a>"
 			out += str(e[0])
 			out += "\">"
 			out += str(e[1])
