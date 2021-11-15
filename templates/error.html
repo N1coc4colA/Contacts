@@ -16,28 +16,22 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="title">Contact</div>
+			<div class="title">Dommage!</div>
 			<div class="content">
 				<div class="Entry">
-					</br>
-					<div id="Profile-Picture">{{initials}}</div>
-				</div>
-				<div class="Entry">
-					<p class="Entry-Title" id="Contact-Name">{{name}}</p>
-					</br>
-					<p class="information">Téléphone ({{ptype}}): <a href="tel:{{phone}}">{{phone}}</a></p>
-					<p class="information">Mail: <a href="mail:{{mail}}">{{mail}}</a></p>
+					<label class="Entry-Title">Un petit Ooups {{err}}!</label>
+					<p>{{msg}}</p>
 				</div>
 			</div>
 			<div class="controls">
-				<div class="right-controls">
-					<a class="button-next" href="add?id={{id}}">Editer</a>
-				</div>
 				<div class="left-controls">
-					<a href="javascript:history.back()" class="button">Retour</a>
+				</div>
+				<div class="center-layout">
+				</div>
+				<div class="right-controls">
+					<a class="button" href="/">Retour à l'acceuil</a>
 				</div>
 			</div>
 		</div>
-		<script src="static/styling.js"></script>
 	</body>
 </html>

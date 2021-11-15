@@ -14,6 +14,7 @@ body {
 	background: linear-gradient(to bottom right, #32419d 0%, #53e3a6 50%, #00d76a 100%);
 
 	width: 100%;
+	height: 100%;
 	overflow: hidden;
 }
 
@@ -30,6 +31,10 @@ body:before {
     left: 0;
     bottom: 0;
     z-index: 0;
+}
+
+form {
+	height: 100%;
 }
 
 a, a:hover, a:active, a:visited, a:link {
@@ -515,4 +520,12 @@ input[type="checkbox"] {
 /* Used when there is a top margin that usually doesn't show up in the first Entry */
 .fix-top {
 	margin-top: 0px;
+}
+
+.expand-horiz {
+	width: 100%;
+}
+
+.expand-verti {
+	height: 100%;
 }

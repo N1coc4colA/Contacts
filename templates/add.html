@@ -12,10 +12,11 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="static/styles.css">
 	</head>
 	<body>
-		<form method="post">
+		<form method="get" action="add">
+		<input name="e" value="i" type="hidden"></input>
 			<div class="container">
 				<div class="title">Créer un nouveau contact</div>
 				<div class="content">
@@ -28,7 +29,7 @@
 					<div class="Entry">
 						<label class="Entry-Title" for="email">Mail</label>
 						</br>
-						<input type="email" name="email" id="email" placeholder="abc@def.ghi" value="{{mail}}" required>
+						<input type="email" name="mail" id="mail" placeholder="abc@def.ghi" value="{{mail}}" required>
 					</div>
 					<div class="Entry">
 						<label class="Entry-Title" for="phone">Téléphone</label>
@@ -68,11 +69,11 @@
 					<div class="center-layout">
 					</div>
 					<div class="right-controls">
-						<button class="button-next" type="submit"><a class ="back-home" href="index.html">Ajouter</a></button>
+						<button class="button-next" type="submit">Ajouter</button>
 					</div>
 				</div>
 			</div>
 		</form>
-		<script src="styling.js"></script>
+		<script src="static/styling.js"></script>
 	</body>
 </html>
