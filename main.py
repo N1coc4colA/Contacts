@@ -14,7 +14,7 @@ must_debug = False
 if ("-dbg" in sys.argv) or ("--debug" in sys.argv):
 	must_debug = True
 
-app = Flask(__name__, debug=must_debug)
+app = Flask(__name__)
 
 def verbose(s):
 	"""
@@ -244,4 +244,4 @@ def error_handler(error):
 	return render_template("error.html", err=error.code, msg=str(error))
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=must_debug)
