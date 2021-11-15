@@ -1,4 +1,4 @@
-</!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr-FR">
 	<head>
 		<meta charset="utf-8">
@@ -16,15 +16,16 @@
 	</head>
 	<body>
 		<form method="get" action="add">
-		<input name="e" value="i" type="hidden"></input>
+			<input name="e" value="i" type="hidden"></input>
+			{{with_id|safe}}
 			<div class="container">
-				<div class="title">Créer un nouveau contact</div>
+				<div class="title">{{method}} contact</div>
 				<div class="content">
 					<div class="Entry">
 						<label class="Entry-Title" for="name">Nom du contact</label>
 						</br>
-						<input type="text" name="name" id="name" placeholder="Asap" value="{{name}}" required>
-						<input type="text" name="surname" id="surname" placeholder="Arnash" value="{{surname}}" required>
+						<input type="text" name="name" id="name" placeholder="Asap" pattern="[A-Za-z]+" value="{{name}}" required>
+						<input type="text" name="surname" id="surname" placeholder="Arnash" pattern="[A-Za-z]+" value="{{surname}}" required>
 					</div>
 					<div class="Entry">
 						<label class="Entry-Title" for="email">Mail</label>
@@ -37,29 +38,18 @@
 						<input type="tel" name="phone" id="phone" placeholder="xx-xx-xx-xx" pattern="\d{8}" value="{{phone}}" required>
 					</div>
 					<div class="Entry">
-					<label class="Etry-Title" for="type">Type</label>
-					</br>
-						<label class="radio radio-before" for="mobile">
-							<span class="radio__input">
-								<input type="radio" name="type" id="mobile" value="mobile" checked>
-								<span class="radio__control"></span>
-							</span>
-							<span class="radio__label">Mobile</span>
-						</label>
-						<label class="radio radio-before" for="maison">
-							<span class="radio__input">
-								<input type="radio" name="type" id="maison" value="maison">
-								<span class="radio__control"></span>
-							</span>
-							<span class="radio__label">Maison</span>
-						</label>
-						<label class="radio radio-before" for="travail">
-							<span class="radio__input">
-								<input type="radio" name="type" id="travail" value="travail">
-								<span class="radio__control"></span>
-							</span>
-							<span class="radio__label">Travail</span>
-						</label>
+						<label class="Entry-Title" for="postal">Adresse postale</label>
+						</br>
+						<input type="text" name="postal" id="postal" placeholder="France, Bretagne, 12 Le Tertre Noë" value="{{postal}}" required>
+					</div>
+					<div class="Entry">
+						<label class="Entry-Title" for="type">Type</label>
+						</br>
+						<select name="type" value="{{val}}">
+							<option value="ami">Ami</option>
+							<option value="famille">Famille</option>
+							<option value="travail">Travail</option>
+						</select>
 					</div>
 				</div>
 				<div class="controls">
@@ -69,11 +59,11 @@
 					<div class="center-layout">
 					</div>
 					<div class="right-controls">
-						<button class="button-next" type="submit">Ajouter</button>
+						<button class="button-next" type="submit">{{next}}</button>
 					</div>
 				</div>
 			</div>
 		</form>
-		<script src="static/styling.js"></script>
+		<script src="static/features.js"></script>
 	</body>
 </html>

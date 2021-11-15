@@ -18,18 +18,23 @@
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	</head>
 	<body>
-		<!--somehow it seems to don't want to post :/-->
 		<form method="get">
 			<div class="container">
 				<div class="TitleBar">
 					<input class="SearchBar" onkeyup="updateSearch(this.value);" type="text" placeholder="Rechercher">
 					<div class="title withSearchBar">Liste des contacts</div>
+					<select class="leftTitleBar" name="selector" id="filter-selector" onchange="filterBy(this.value);">
+						<option value="">Aucune catégorie</option>
+						<option value="mobile">Mobile</option>
+						<option value="maison">Maison</option>
+						<option value="travail">Travail</option>
+					</select>
 				</div>
 				<div class="content fix-top">
 					<!-- Here goes the contacts list -->
 					<div class="cLCEnableAnim" id="contactsListContainer">
 						<table>
-							<thead>
+							<thead id="table-header">
 								<tr>
 									<th class="list-checkbox-header"><div class="void-spacer"></div></th>
 									<th>Nom</th>
@@ -54,7 +59,7 @@
 				</div>
 			</div>
 		</form>
-		<script src="static/styling.js"></script>
+		<script src="static/features.js"></script>
 		<script src="static/checker.js"></script>
 	</body>
 </html>

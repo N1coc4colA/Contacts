@@ -46,6 +46,16 @@ a, a:hover, a:active, a:visited, a:link {
 }
 
 /* Inputs styling */
+select {
+	width: 150px;
+	height: 27px;
+	border-radius: 3px;
+	border: 1px solid #cecece;
+	box-sizing: border-box;
+	background-color: #f7f7f7;
+	margin-top: 3px;
+}
+
 input {
 	width: 80%;
 	padding: 5px;
@@ -129,20 +139,35 @@ input[type=radio] {
 .withSearchBar {
     display: inline;
     width: 160px;
-	margin-left: calc(50% - (100% - 160px - 10%)/2 - 80px);
 	text-align: left;
+	position: fixed;
+	top: 4px;
+	left: calc(50% - 80px);
 }
 
 .SearchBar {
     display: inline;
-    width: calc((100% - 160px - 10%)/2);
+    width: calc(35% - 80px);
 	margin: 0px;
     margin-left: 2px;
+    position: relative;
+    float: left;
+    top: 4px;
+    left: 2px;
+}
+
+.leftTitleBar {
+    position: relative;
+    float: right;
+    top: 4px;
+    right: 4px;
+	margin-top: 0px;
 }
 
 /* Search features */
 .hidden {
 	visibility: hidden;
+    display: none;
 }
 
 /* Showcase components */
