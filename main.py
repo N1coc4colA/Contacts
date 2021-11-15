@@ -125,6 +125,13 @@ class DB:
 		Adds data to the DB
 		"""
 		verbose(" > add contact")
+		#Disables code injection by using "
+		content["name"].replace("\"", "")
+		content["surname"].replace("\"", "")
+		content["phone"].replace("\"", "")
+		content["ptype"].replace("\"", "")
+		content["mail"].replace("\"", "")
+		content["postal"].replace("\"", "")
 		requete = "INSERT INTO contacts (Nom, Prenom, Phone, PType, Mail, Postal) VALUES (\"" + content["name"] + "\",\"" + content["surname"] + "\", \"" + content["phone"] + "\", \"" + content["ptype"] + "\", \"" + content["mail"] + "\", \"" + content["postal"] + "\");"
 		self.cursor.execute(requete)
 		self.check_fail()
@@ -136,6 +143,15 @@ class DB:
 		Updates the DB content by using the ID used
 		"""
 		verbose(" > upd by id")
+		#Disables code injection by using "
+		content["name"].replace("\"", "")
+		content["surname"].replace("\"", "")
+		content["phone"].replace("\"", "")
+		content["ptype"].replace("\"", "")
+		content["mail"].replace("\"", "")
+		content["postal"].replace("\"", "")
+		id = str(id)
+		id.replace("\"", "")
 		self.cursor.execute("UPDATE contacts SET Nom=\"" + content["name"] + "\", Prenom=\"" + content["surname"] + "\", Phone=\"" + content["phone"] + "\", PType=\"" + content["ptype"] + "\", Postal=\"" + content["postal"] + "\" WHERE Id=" + str(id) + ";")
 		self.check_fail()
 		self._hasUpdate=True
