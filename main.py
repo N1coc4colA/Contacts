@@ -42,6 +42,7 @@ class DB:
 	def __init__(self):
 		verbose(" > DB.__init__")
 		self._hasUpdate=False
+		self._dbFail=False
 		self.db = sqlite3.connect("contacts_db", check_same_thread=False)
 		self.cursor = self.db.cursor()
 		self.cursor.execute("SELECT count(name) FROM sqlite_master WHERE type='table' AND name='contacts'")
@@ -63,8 +64,11 @@ class DB:
 		"""
 		Will raise an error if an operation on the DB has failed.
 		"""
+		verbose(" > Check for fail")
 		if (self.cursor.rowcount == 0):
-			abort(500, description="Database operation failed!")
+			verbose(" > Abort")
+			self._dbFail=True
+			abort(500)
 
 	def htmlifiedList(self):
 		"""
@@ -73,7 +77,6 @@ class DB:
 		verbose(" > htmlified")
 		out = ""
 		self.cursor.execute("SELECT * FROM contacts;")
-		check_fail()
 		data = self.cursor.fetchall()
 		i = 0
 		for e in data:
@@ -141,6 +144,12 @@ class DB:
 		self._hasUpdate=False
 		return "1" if (tmp) else "0"
 
+	def isDBError(self):
+		tmp=self._dbFail
+		self._dbFail=False
+		return tmp
+
+
 def get_initials(name):
 	"""
 	Generate a string like Asap Arnash -> Aa. Used with view.html
@@ -161,7 +170,7 @@ def get_initials(name):
 			out += v[0][1]
 	return out
 
-def get_data()
+def get_data():
 	"""
 	Returns the arguments of the request.
 	"""
@@ -241,6 +250,8 @@ def error_handler(error):
 	Shows a beatuiful error page to the user.
 	"""
 	verbose(" > handle error")
+	if (DB.instance().isDBError):
+		return render_template("error.html", err="-1", msg="Internal Database Operation has failed. Try to remove the database file, or restart the app.")
 	return render_template("error.html", err=error.code, msg=str(error))
 
 if __name__ == "__main__":
