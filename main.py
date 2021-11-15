@@ -89,11 +89,10 @@ class DB:
 			out += str(e[0]) #On met le %1, l'ID
 			out += "\" data-info=\""
 			out += str(e[5]) #On met le %2, le type
-			out += "</a>"
+			out += "\">"
 			out += str(e[1])
 			#De même pour ici
-			out += "\"></td><td>"
-			out += "<a href=\"view?id=\""
+			out += "</a></td><td><a href=\"view?id=\""
 			out += str(e[0])
 			out += "\" data-info=\""
 			out += str(e[5])
