@@ -89,7 +89,7 @@ class DB:
 			out += str(e[0]) #On met le %1, l'ID
 			out += "\" data-info=\""
 			out += str(e[5]) #On met le %2, le type
-			out += "\">"
+			out += "</a>"
 			out += str(e[1])
 			#De même pour ici
 			out += "\"></td><td>"
