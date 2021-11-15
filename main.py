@@ -82,10 +82,16 @@ class DB:
 		for e in data:
 			out += "<tr><td><input type=\"checkbox\" name=\"selection\" value=\""
 			out += str(e[0])
-			out += "\"></td><td><a href=\"view?id= data_info="str(e[5]) "</a>"
-			out += str(e[0])
+			out += "\"></td><td>"
+			#La balise <a>, on doit avoir:
+			#<a href="view?id=%1" data-info="%2">
+			out += "<a href=\"view?id=\""
+			out += str(e[0]) #On met le %1, l'ID
+			out += "\" data_info=\""
+			out += str(e[5]) #On met le %2, le type
 			out += "\">"
 			out += str(e[1])
+			#De même pour ici
 			out += "</a></td><td><a href=\"view?id="
 			out += str(e[0])
 			out += "\">"
