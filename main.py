@@ -85,14 +85,14 @@ class DB:
 			out += "\"></td><td>"
 			#La balise <a>, on doit avoir:
 			#<a href="view?id=%1" data-info="%2">
-			out += "<a href=\"view?id=\""data_info="str(e[5])>"
+			out += "<a href=\"view?id=Mail\""
 			out += str(e[0]) #On met le %1, l'ID
-			out += "\" data_info=\""
+			out += "\" data_info=\"str(e[5])"
 			out += str(e[5]) #On met le %2, le type
 			out += "\">"
 			out += str(e[1])
 			#De même pour ici
-			out += "</a></td><td><a href=\"view?id=\""data_info="str(e[5])>"
+			out += "</a></td><td><a href=\"view?id=\""
 			out += str(e[0])
 			out += "\">"
 			out += str(e[2])
