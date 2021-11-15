@@ -7,14 +7,16 @@ function httpGetAsync(theUrl, callback)
             callback(xmlHttp.responseText);
 			return;
 		//Provide a warning message
-		} else if (httpGetAsync.count > 100) {
-			httpGetAsync.count = 0;
-			if (!httpGetAsync.notified) {
-				httpGetAsync.notified = true;
-				alert("Seems like the connection to the backend broke. Try to restart the app.");
+		} else if (xmlHttp.status >= 400) { //Means unreachable in away
+			if (httpGetAsync.count > 100) {
+				httpGetAsync.count = 0;
+				if (!httpGetAsync.notified) {
+					httpGetAsync.notified = true;
+					alert("Seems like the connection to the backend broke. Try to restart the app.");
+				} else {
+					httpGetAsync.count++;
+				}
 			}
-		} else {
-			httpGetAsync.count++;
 		}
     }
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
