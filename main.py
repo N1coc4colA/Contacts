@@ -92,8 +92,10 @@ class DB:
 			out += "\">"
 			out += str(e[1])
 			#De même pour ici
-			out += "</a></td><td><a href=\"view?id=\""
+			out += "<a href=\"view?id=\""
 			out += str(e[0])
+			out += "\" data-info=\""
+			out += str(e[5])
 			out += "\">"
 			out += str(e[2])
 			out += "</a></td></tr>"
