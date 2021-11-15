@@ -87,7 +87,7 @@ class DB:
 			#<a href="view?id=%1" data-info="%2">
 			out += "<a href=\"view?id=\""
 			out += str(e[0]) #On met le %1, l'ID
-			out += "\" data-info=\"str(e[5])>"
+			out += "\" data-info=\"str(e[5])">
 			out += str(e[5]) #On met le %2, le type
 			out += "\">"
 			out += str(e[1])
